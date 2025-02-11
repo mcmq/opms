@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Dashboard | Outpatient Management System</title>
+        <title>Patients | Outpatient Management System</title>
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+        <script type="module" src="/script/patients.js"></script>
     </head>
     <body>
         <div class="min-h-screen w-full max-w-screen-lg mx-auto grid grid-cols-[200px_1fr]">
@@ -22,45 +23,40 @@
                     <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white">Sign out</button>
                 </header>  
                 <main class="flex flex-col gap-6 p-3">
-                    <section class="grid gap-8 md:grid-cols-3">
-                        <div class="p-4 flex gap-3 border border-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-400">Total patients</h3>
-                                <p class="text-xl font-bold">001</p>
+                    <section class="flex flex-col gap-4 border border-gray-200 rounded-lg p-4">
+                        <h1 class="text-lg font-bold">Register Patient</h1>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="flex flex-col gap-2">
+                                <label>Patient Name</label>
+                                <input id="name" class="border border-gray-400 p-2" placeholder="Patient name" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label>DOB</label>
+                                <input type="date" id="dob" class="border border-gray-400 p-2"/>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label>Contact Number</label>
+                                <input id="contact" class="border border-gray-400 p-2" placeholder="Contact" />
                             </div>
                         </div>
-                        <div class="p-4 flex gap-3 border border-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-400">Total Doctors</h3>
-                                <p class="text-xl font-bold">020</p>
-                            </div>
-                        </div>
-                        <div class="p-4 flex gap-3 border border-gray-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-plus-2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M10 16h4"/><path d="M12 14v4"/></svg>
-                            <div>
-                                <h3 class="text-sm font-medium text-gray-400">Total Appointments</h3>
-                                <p class="text-xl font-bold">020</p>
-                            </div>
-                        </div>
+                        <button id="register-patient" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2">Register</button>
                     </section>
                     <section class="flex flex-col gap-6">
-                        <h3 class="text-lg font-bold">Upcoming Appointments</h3>
+                        <h3 class="text-lg font-bold">Patients</h3>
                         <table class="text-left">
                             <thead class="text-sm text-gray-700 uppercase bg-gray-50">
                                 <tr>
-                                    <th class="px-6 py-3">Appointment ID</th>
                                     <th class="px-6 py-3">Patient ID</th>
                                     <th class="px-6 py-3">Name</th>
-                                    <th class="px-6 py-3">Date</th>
+                                    <th class="px-6 py-3">DOB</th>
+                                    <th class="px-6 py-3">Registered Date</th>
                                 </tr>
                             </thead>
                             <tbody class="divider-y-2">
                                 <tr>
                                     <th class="px-6 py-3">XYZ099</th>
-                                    <th class="px-6 py-3">ABC001</th>
                                     <th class="px-6 py-3">Kaasim</th>
+                                    <th class="px-6 py-3">2002/06/06</th>
                                     <th class="px-6 py-3">05/02/2025 4:00 PM</th>
                                 </tr>
                             </tbody>
