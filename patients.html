@@ -8,14 +8,33 @@
         <script type="module" src="/script/patients.js"></script>
     </head>
     <body>
-        <div class="min-h-screen w-full max-w-screen-lg mx-auto grid grid-cols-[200px_1fr]">
-            <aside class="flex flex-col gap-4 border-r border-gray-200 p-3">
+        <div class="min-h-screen w-full max-w-screen-lg mx-auto grid grid-cols-[210px_1fr]">
+            <aside class="bg-blue-500 text-white flex flex-col gap-4 border-r border-gray-200 p-4">
                 <h3 class="font-bold">Menu</h3>
-                <a class="rounded-lg p-3 hover:bg-gray-100" href="/">Dashboard</a>
-                <a class="rounded-lg p-3 hover:bg-gray-100" href="/appointments">Appointments</a>
-                <a class="rounded-lg p-3 hover:bg-gray-100" href="/patients">Patients</a>
-                <a class="rounded-lg p-3 hover:bg-gray-100" href="/doctors">Doctors</a>
-                <a class="rounded-lg p-3 hover:bg-gray-100" href="/users">Users</a>
+                <a class="flex items-center gap-3 rounded-lg p-2.5 hover:bg-blue-200 hover:text-blue-800 transition-all" href="/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layout-dashboard"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg p-2.5 hover:bg-blue-200 hover:text-blue-800 transition-all" href="/appointments">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-plus-2"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M10 16h4"/><path d="M12 14v4"/></svg>
+                    <span>Appointments</span>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg p-2.5 hover:bg-blue-200 hover:text-blue-800 transition-all" href="/patients">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-accessibility"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg>
+                    <span>Patients</span>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg p-2.5 hover:bg-blue-200 hover:text-blue-800 transition-all" href="/doctors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stethoscope"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
+                    <span>Doctors</span>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg p-2.5 hover:bg-blue-200 hover:text-blue-800 transition-all" href="/payments">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                    <span>Payments</span>
+                </a>
+                <a class="flex items-center gap-3 rounded-lg p-2.5 hover:bg-blue-200 hover:text-blue-800 transition-all" href="/users">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users-round"><path d="M18 21a8 8 0 0 0-16 0"/><circle cx="10" cy="8" r="5"/><path d="M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3"/></svg>
+                    <span>Users</span>
+                </a>
             </aside>
             <div class="flex flex-col gap-6">
                 <header class="flex justify-between items-center p-3 border-b border-gray-200">
@@ -23,41 +42,45 @@
                     <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white">Sign out</button>
                 </header>  
                 <main class="flex flex-col gap-6 p-3">
-                    <section class="flex flex-col gap-4 border border-gray-200 rounded-lg p-4">
+                    <section class="flex flex-col gap-4 p-4 border border-gray-200 rounded-lg">
                         <h1 class="text-lg font-bold">Register Patient</h1>
-                        <div class="grid grid-cols-3 gap-4">
-                            <div class="flex flex-col gap-2">
-                                <label>Patient Name</label>
-                                <input id="name" class="border border-gray-400 p-2" placeholder="Patient name" />
+                        <form id="patients-form" class="flex flex-wrap gap-4">
+                            <div class="flex-auto w-1/4 flex flex-col gap-2">
+                                <label for="patient-id">Patient ID</label>
+                                <input class="disabled:bg-gray-100 border border-gray-300 p-1.5" type="text" name="patient-id" id="patient-id" required disabled>
                             </div>
-                            <div class="flex flex-col gap-2">
-                                <label>DOB</label>
-                                <input type="date" id="dob" class="border border-gray-400 p-2"/>
+                            <div class="flex-auto w-1/4 flex flex-col gap-2">
+                                <label for="patient-name">Patient Name</label>
+                                <input class="border border-gray-300 p-1.5" type="text" name="patient-name" id="patient-name" required>
                             </div>
-                            <div class="flex flex-col gap-2">
-                                <label>Contact Number</label>
-                                <input id="contact" class="border border-gray-400 p-2" placeholder="Contact" />
+                            <div class="flex-auto w-1/4 flex flex-col gap-2">
+                                <label for="dob">DOB</label>
+                                <input class="border border-gray-300 p-1.5" type="date" name="dob" id="dob" required>
                             </div>
-                        </div>
-                        <button id="register-patient" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2">Register</button>
+                            <div class="flex-auto w-1/4 flex flex-col gap-2">
+                                <label for="phone">Phone</label>
+                                <input class="border border-gray-300 p-1.5" type="text" name="phone" id="phone" required>
+                            </div>
+                            <button class="flex-auto w-full p-2 bg-blue-500 hover:bg-blue-500/80 text-white">Register Patient</button>
+                        </form>
                     </section>
-                    <section class="flex flex-col gap-6">
+                    <section class="flex flex-col gap-4 p-4 border border-gray-200 rounded-lg">
                         <h3 class="text-lg font-bold">Patients</h3>
                         <table class="text-left">
                             <thead class="text-sm text-gray-700 uppercase bg-gray-50">
                                 <tr>
                                     <th class="px-6 py-3">Patient ID</th>
-                                    <th class="px-6 py-3">Name</th>
+                                    <th class="px-6 py-3">Patient Name</th>
                                     <th class="px-6 py-3">DOB</th>
-                                    <th class="px-6 py-3">Registered Date</th>
+                                    <th class="px-6 py-3">Phone</th>
+                                    <th class="px-6 py-3">Action</th>
                                 </tr>
                             </thead>
-                            <tbody class="divider-y-2">
+                            <tbody id="patients" class="divider-y-2">
                                 <tr>
-                                    <th class="px-6 py-3">XYZ099</th>
-                                    <th class="px-6 py-3">Kaasim</th>
-                                    <th class="px-6 py-3">2002/06/06</th>
-                                    <th class="px-6 py-3">05/02/2025 4:00 PM</th>
+                                    <td class="px-6 py-4 text-center" colspan="5">
+                                        <svg style="margin: auto;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
