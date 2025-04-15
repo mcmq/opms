@@ -6,8 +6,11 @@
         <title>Payments | Outpatient Management System</title>
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <script type="module" src="/script/payments.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="font-[Poppins">
         <div class="min-h-screen w-full max-w-screen-lg mx-auto grid grid-cols-[200px_1fr]">
             <aside class="bg-blue-500 text-white flex flex-col gap-4 border-r border-gray-200 p-4">
                 <h3 class="font-bold">Menu</h3>
@@ -39,7 +42,7 @@
             <div class="flex flex-col gap-6">
                 <header class="flex justify-between items-center p-3 border-b border-gray-200">
                     <h3 class="text-xl font-bold">Dashboard</h3>
-                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white">Sign out</button>
+                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white rounded-lg">Sign out</button>
                 </header>  
                 <main class="flex flex-col gap-6 p-3">
                     <section class="flex flex-col gap-4 p-4 border border-gray-200 rounded-lg">
@@ -50,6 +53,7 @@
                                     <th class="px-6 py-3">Payment ID</th>
                                     <th class="px-6 py-3">Date</th>
                                     <th class="px-6 py-3">Amount</th>
+                                    <th class="px-6 py-3">Status</th>
                                     <th class="px-6 py-3">Action</th>
                                 </tr>
                             </thead>

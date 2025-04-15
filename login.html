@@ -6,23 +6,26 @@
   <title>Login | Outpatient Management System</title>
   <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
   <script type="module" src="/script/auth.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-[Poppins]">
   <div class="min-h-screen grid grid-cols-2 place-items-center">
     <img class="w-full h-full object-cover" src="/images/op.jpg" alt="A doctor image" />
-    <div class="w-full h-full max-w-sm flex flex-col justify-center items-center gap-4">
+    <form id="login-form" class="w-full h-full max-w-sm flex flex-col justify-center items-center gap-4">
       <h1 class="text-3xl font-bold mb-3">Login to your Account</h1>
       <p id="error" class="text-red-500 mb-7"></p>
       <div class="w-full flex flex-col gap-2">
         <label>Email address</label>
-        <input type="email" id="email" class="border border-gray-400 p-2" placeholder="Enter your email address" />
+        <input type="email" id="email" class="border border-gray-400 p-2.5 rounded-lg" placeholder="Enter your email address" required />
       </div>
       <div class="w-full flex flex-col gap-2">
         <label>Password</label>
-        <input type="password" id="password" class="border border-gray-400 p-2" placeholder="Enter your passowrd" />
+        <input type="password" id="password" class="border border-gray-400 p-2.5 rounded-lg" placeholder="Enter your passowrd" required />
       </div>
-      <button id="login-button" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2">Login</button>
-    </div>
+      <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2 rounded-lg">Login</button>
+    </form>
   </div>
 </body>
 </html>

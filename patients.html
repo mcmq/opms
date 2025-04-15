@@ -6,8 +6,11 @@
         <title>Patients | Outpatient Management System</title>
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <script type="module" src="/script/patients.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="font-[Poppins]">
         <div class="min-h-screen w-full max-w-screen-lg mx-auto grid grid-cols-[210px_1fr]">
             <aside class="bg-blue-500 text-white flex flex-col gap-4 border-r border-gray-200 p-4">
                 <h3 class="font-bold">Menu</h3>
@@ -39,7 +42,7 @@
             <div class="flex flex-col gap-6">
                 <header class="flex justify-between items-center p-3 border-b border-gray-200">
                     <h3 class="text-xl font-bold">Dashboard</h3>
-                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white">Sign out</button>
+                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white rounded-lg">Sign out</button>
                 </header>  
                 <main class="flex flex-col gap-6 p-3">
                     <section class="flex flex-col gap-4 p-4 border border-gray-200 rounded-lg">
@@ -47,21 +50,21 @@
                         <form id="patients-form" class="flex flex-wrap gap-4">
                             <div class="flex-auto w-1/4 flex flex-col gap-2">
                                 <label for="patient-id">Patient ID</label>
-                                <input class="disabled:bg-gray-100 border border-gray-300 p-1.5" type="text" name="patient-id" id="patient-id" required disabled>
+                                <input class="disabled:bg-gray-100 border border-gray-300 p-1.5 rounded-lg" type="text" name="patient-id" id="patient-id" required disabled>
                             </div>
                             <div class="flex-auto w-1/4 flex flex-col gap-2">
                                 <label for="patient-name">Patient Name</label>
-                                <input class="border border-gray-300 p-1.5" type="text" name="patient-name" id="patient-name" required>
+                                <input class="border border-gray-300 p-1.5 rounded-lg" type="text" name="patient-name" id="patient-name" required>
                             </div>
                             <div class="flex-auto w-1/4 flex flex-col gap-2">
                                 <label for="dob">DOB</label>
-                                <input class="border border-gray-300 p-1.5" type="date" name="dob" id="dob" required>
+                                <input class="border border-gray-300 p-1.5 rounded-lg" type="date" name="dob" id="dob" required>
                             </div>
                             <div class="flex-auto w-1/4 flex flex-col gap-2">
                                 <label for="phone">Phone</label>
-                                <input class="border border-gray-300 p-1.5" type="text" name="phone" id="phone" required>
+                                <input class="border border-gray-300 p-1.5 rounded-lg" type="text" name="phone" id="phone" required>
                             </div>
-                            <button class="flex-auto w-full p-2 bg-blue-500 hover:bg-blue-500/80 text-white">Register Patient</button>
+                            <button class="flex-auto w-full p-2 bg-blue-500 hover:bg-blue-500/80 text-white rounded-lg">Register Patient</button>
                         </form>
                     </section>
                     <section class="flex flex-col gap-4 p-4 border border-gray-200 rounded-lg">

@@ -4,11 +4,15 @@ import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/fir
 window.onload = function() {
     const auth = getAuth(app)
 
-    const loginButton = document.getElementById("login-button")
-    loginButton.addEventListener("click", async function() {
+    const loginForm = document.getElementById("login-form")
+    loginForm.addEventListener("submit", async function(event) {
+        event.preventDefault()
+
         const email = document.getElementById("email").value
         const password = document.getElementById("password").value
         const errorText = document.getElementById("error")
+
+        errorText.innerText = ""
 
         if (!email || !password) {
             errorText.innerText = "Please enter email and password!"
@@ -17,7 +21,7 @@ window.onload = function() {
 
         signInWithEmailAndPassword(auth, email, password)
         .then(function(userCredentials) {
-            console.log(userCredentials)
+            window.location.href = "/"
         })
         .catch(function(error){
             errorText.innerText = error.code

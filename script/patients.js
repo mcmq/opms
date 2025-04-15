@@ -30,7 +30,7 @@ window.onload = function() {
                 <td class="px-6 py-4">${patient.dob}</td>
                 <td class="px-6 py-4">${patient.phone}</td>
                 <td class="px-6 py-4">
-                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white" onclick="deletePatient('` + doc.id + `')">Delete</button>
+                    <button class="p-2 bg-red-500 rounded-lg hover:bg-red-500/80 text-white" onclick="deletePatient('` + doc.id + `')">Delete</button>
                 </td>
             `
             patients.appendChild(row)

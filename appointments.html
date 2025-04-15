@@ -6,8 +6,11 @@
         <title>Appointments | Outpatient Management System</title>
         <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
         <script type="module" src="/script/appointments.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="font-[Poppins]">
         <div class="min-h-screen w-full max-w-screen-lg mx-auto grid grid-cols-[200px_1fr]">
             <aside class="bg-blue-500 text-white flex flex-col gap-4 border-r border-gray-200 p-4">
                 <h3 class="font-bold">Menu</h3>
@@ -39,7 +42,7 @@
             <div class="flex flex-col gap-6">
                 <header class="flex justify-between items-center p-3 border-b border-gray-200">
                     <h3 class="text-xl font-bold">Dashboard</h3>
-                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white">Sign out</button>
+                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white rounded-lg">Sign out</button>
                 </header>  
                 <main class="flex flex-col gap-6 p-3">
                     <section class="flex flex-col gap-4 p-4 border border-gray-200 rounded-lg">
@@ -65,13 +68,17 @@
                                 <label for="time">Time:</label>
                                 <input class="border border-gray-300 p-1.5" type="time" id="time" name="time" required>
                             </div>
+                            <div class="flex-auto w-1/4 flex flex-col gap-2">
+                                <label for="fee">Fee $</label>
+                                <input class="border border-gray-300 p-1.5" type="number" id="fee" name="fee" required>
+                            </div>
                             <div class="flex-auto w-full flex flex-col gap-2">
                                 <label for="reason">Reason:</label>
                                 <textarea class="border border-gray-300 p-1.5" type="text" id="reason" name="reason" required>
 
                                 </textarea>
                             </div>
-                            <button type="submit" class="flex-auto w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2">Submit</button>
+                            <button type="submit" class="flex-auto w-full rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold p-2">Submit</button>
                         </form>
                     </section>
                     <section class="flex flex-col gap-4 p-4 border border-gray-200 rounded-lg">
@@ -82,12 +89,14 @@
                                     <th class="px-6 py-3">Patient ID</th>
                                     <th class="px-6 py-3">Date</th>
                                     <th class="px-6 py-3">Reason</th>
+                                    <th class="px-6 py-3">Fee</th>
+                                    <th class="px-6 py-3">Status</th>
                                     <th class="px-6 py-3">Action</th>
                                 </tr>
                             </thead>
                             <tbody id="appointments" class="divider-y-2">
                                 <tr>
-                                    <td class="px-6 py-4 text-center" colspan="5">
+                                    <td class="px-6 py-4 text-center" colspan="6">
                                         <svg style="margin: auto;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-loader"><path d="M12 2v4"/><path d="m16.2 7.8 2.9-2.9"/><path d="M18 12h4"/><path d="m16.2 16.2 2.9 2.9"/><path d="M12 18v4"/><path d="m4.9 19.1 2.9-2.9"/><path d="M2 12h4"/><path d="m4.9 4.9 2.9 2.9"/></svg>
                                     </td>
                                 </tr>

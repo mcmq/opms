@@ -14,7 +14,7 @@ window.onload = function() {
         if (snapshot.empty) {
             const row = document.createElement("tr")
             row.innerHTML = `
-                <td class="px-6 py-4 text-center" colspan="5">No appointments</td>
+                <td class="px-6 py-4 text-center" colspan="6">No appointments</td>
             `
             appointments.appendChild(row)
             return
@@ -26,9 +26,11 @@ window.onload = function() {
             row.innerHTML = `
                 <td class="px-6 py-4">${appointment.patientId}</td>
                 <td class="px-6 py-4">${appointment.date}</td>
-                <td class="px-6 py-4">${appointment.reason}</td>
+                <td class="px-6 py-4">${appointment.reason ?? "N/A"}</td>
+                <td class="px-6 py-4">$${appointment.fee}</td>
+                <td class="px-6 py-4">${appointment.paid ? "Paid" : "Not paid"}</td>
                 <td class="px-6 py-4">
-                    <button class="p-2 bg-red-500 hover:bg-red-500/80 text-white" onclick="deleteAppointment('` + doc.id + `')">Delete</button>
+                    <button class="p-2 bg-red-500 rounded-lg hover:bg-red-500/80 text-white" onclick="deleteAppointment('` + doc.id + `')">Delete</button>
                 </td>
             `
             appointments.appendChild(row)
@@ -47,7 +49,7 @@ window.onload = function() {
             const patient = doc.data()
             patientId.innerHTML = `
                 <option value="">Select a patient</option>
-                <option name="patient-id" value="${patient.id}">${patient.id}</option>
+                <option name="patient-id" value="${patient.id}">${patient.id} - ${patient.name}</option>
             `
         })
     })
@@ -64,7 +66,7 @@ window.onload = function() {
             const doctor = doc.data()
             doctorId.innerHTML = `
                 <option value="">Select a doctor</option>
-                <option name="doctor-id" value="${doctor.id}">${doctor.id}</option>
+                <option name="doctor-id" value="${doctor.id}">${doctor.id} - ${doctor.name}</option>
             `
         })
     })
@@ -76,9 +78,10 @@ window.onload = function() {
         const doctorId = document.getElementById("doctor-id").value
         const date = document.getElementById("date").value
         const time = document.getElementById("time").value
+        const fee = document.getElementById("fee").value
         const reason = document.getElementById("reason").value
 
-        if (!patientId || !doctorId || !date || !time) {
+        if (!patientId || !doctorId || !date || !time || !fee) {
             alert("Please fill all the fields")
             return
         }
@@ -88,7 +91,9 @@ window.onload = function() {
             doctorId,
             reason,
             date,
-            time
+            time,
+            fee,
+            paid: false
         }
         const appointmentsRef = collection(db, "appointments")
         addDoc(appointmentsRef, appointment)
